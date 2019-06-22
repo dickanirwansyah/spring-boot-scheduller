@@ -20,24 +20,24 @@ public class SchedullerTasks {
     private static final Logger logger = LoggerFactory.getLogger(SchedullerTasks.class);
     private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
-    @Autowired
-    private AccountRepository accountRepository;
-
-    @Scheduled(fixedRate = 3000)
-    public void schedullerFixRate(){
-        logger.info("schedullerFixeRate - {} : "+dateTimeFormatter.format(LocalDateTime.now()));
-
-        accountRepository.save(new Account(UUID.randomUUID().toString(),
-                "muhammad",
-                "dicka",
-                "dickanirwansyah@gmail.com"));
-
-        logger.info("findAccountByFirstname : "+accountRepository.findAccountByFirstname("muhammad"));
-        logger.info("Fixed rate scheduler finish : "+dateTimeFormatter.format(LocalDateTime.now()));
-    }
-
-    @Scheduled(fixedRate = 3000)
-    public void schedullerFixDelay(){
-        logger.info("schedullerFixDelay - {} : "+dateTimeFormatter.format(LocalDateTime.now()));
-    }
+//    @Autowired
+//    private AccountRepository accountRepository;
+//
+//    @Scheduled(fixedRate = 3000)
+//    public void schedullerFixRate(){
+//        logger.info("schedullerFixeRate - {} : "+dateTimeFormatter.format(LocalDateTime.now()));
+//
+//        accountRepository.save(new Account(UUID.randomUUID().toString(),
+//                "muhammad",
+//                "dicka",
+//                "dickanirwansyah@gmail.com"));
+//
+//        logger.info("findAccountByFirstname : "+accountRepository.findAccountByFirstname("muhammad"));
+//        logger.info("Fixed rate scheduler finish : "+dateTimeFormatter.format(LocalDateTime.now()));
+//    }
+//
+//    @Scheduled(fixedRate = 3000)
+//    public void schedullerFixDelay(){
+//        logger.info("schedullerFixDelay - {} : "+dateTimeFormatter.format(LocalDateTime.now()));
+//    }
 }
